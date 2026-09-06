@@ -1,95 +1,350 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Packpm ( Placeholder )</title>
-    <script src="https://tailwindcss.com"></script>
+
+    <title>About Packpm</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #0f172a;
+            color: #e2e8f0;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #67e8f9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: min(900px, 92%);
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 70px 0 45px;
+            text-align: center;
+            border-bottom: 1px solid #334155;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            color: #f8fafc;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        main {
+            padding: 45px 0;
+        }
+
+        section {
+            margin-bottom: 45px;
+        }
+
+        h2 {
+            margin-bottom: 18px;
+            color: #f8fafc;
+            font-size: 1.7rem;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #cbd5e1;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: #cbd5e1;
+        }
+
+        ul {
+            padding-left: 25px;
+            color: #cbd5e1;
+        }
+
+        li {
+            margin: 7px 0;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+        }
+
+        .highlight {
+            color: #67e8f9;
+            font-weight: bold;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+        }
+
+        .project {
+            padding: 18px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 10px;
+        }
+
+        .project:hover {
+            border-color: #67e8f9;
+        }
+
+        .goal {
+            padding: 20px;
+            background: #172033;
+            border-left: 4px solid #67e8f9;
+            border-radius: 6px;
+        }
+
+        .important {
+            padding: 25px;
+            background: #1e293b;
+            border: 1px dashed #475569;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .important p {
+            margin: 6px 0;
+        }
+
+        .quote {
+            margin-top: 18px;
+            padding: 15px 20px;
+            border-left: 3px solid #64748b;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        footer {
+            padding: 30px 0;
+            border-top: 1px solid #334155;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            main {
+                padding: 30px 0;
+            }
+        }
+    </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>About Me 👽</h1>
+            <p>Subtitle Creator • Vocaloid / UTAU / Synthesizer V</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section>
+            <h2>Hi! I'm Packpm 👋</h2>
+
+            <p class="intro">
+                I'm a subtitle creator from Thailand who mainly works with
+                <span class="highlight">Vocaloid, UTAU, and Synthesizer V</span>
+                music.
+            </p>
+
+            <p>
+                🎬 I create Thai subtitles and occasionally English subtitles
+                for music videos I enjoy.
+            </p>
+
+            <p>
+                🎵 Favorite synth: <strong>Kasane Teto</strong>
+            </p>
+
+            <p>
+                💻 Tools I use:
+            </p>
+
+            <ul>
+                <li>Aegisub</li>
+                <li>YTSubConverter</li>
+                <li>GitHub</li>
+            </ul>
+        </section>
 
 
-    # About Me
+        <section>
+            <h2>My Goal 🌱</h2>
 
-Hi! I'm Packpm 👋
+            <div class="goal">
+                <p>
+                    I'm working toward a personal goal of making subtitles
+                    for <strong>100 MVs</strong>.
+                </p>
 
-I'm a subtitle creator from Thailand who mainly works with
-Vocaloid, UTAU, and Synthesizer V music.
+                <p>
+                    I started making subtitles simply because I wanted more
+                    Vocaloid songs to be accessible to Thai-speaking listeners.
+                    Over time, it became something I genuinely love doing.
+                </p>
 
-🎬 I create Thai subtitles and occasionally English subtitles
-for music videos I enjoy.
-
-🎵 Favorite synth: Kasane Teto
-
-💻 Tools I use:
-- Aegisub
-- YTSubConverter
-- GitHub
-
-🌱 I'm working toward a personal goal of making subtitles
-for 100 MVs.
-
-I started making subtitles simply because I wanted more
-Vocaloid songs to be accessible to Thai-speaking listeners.
-Over time, it became something I genuinely love doing.
-
-I also sometimes work directly with producers to provide
-official subtitles for their MVs.
+                <p>
+                    I also sometimes work directly with producers to provide
+                    official subtitles for their MVs.
+                </p>
+            </div>
+        </section>
 
 
-    ## What I Do
+        <section>
+            <h2>What I Do 🎬</h2>
 
-- 🇹🇭 Japanese / English → Thai lyric translation
-- 🇬🇧 Japanese / Thai → English translation
-- 🎬 Aegisub subtitle timing
-- ✨ Subtitle styling and effects
-- 📺 YouTube subtitle preparation
-- 🤝 Subtitle contributions for Vocaloid producers## What I Do
-
-- 🇹🇭 Japanese / English → Thai lyric translation
-- 🇬🇧 Japanese / Thai → English translation
-- 🎬 Aegisub subtitle timing
-- ✨ Subtitle styling and effects
-- 📺 YouTube subtitle preparation
-- 🤝 Subtitle contributions for Vocaloid producers
+            <ul>
+                <li>🇹🇭 Japanese / English → Thai lyric translation</li>
+                <li>🇬🇧 Japanese / Thai → English translation</li>
+                <li>🎬 Aegisub subtitle timing</li>
+                <li>✨ Subtitle styling and effects</li>
+                <li>📺 YouTube subtitle preparation</li>
+                <li>🤝 Subtitle contributions for Vocaloid producers</li>
+            </ul>
+        </section>
 
 
-## My Works
+        <section>
+            <h2>My Works 📚</h2>
 
-I've worked on subtitles for various Vocaloid, UTAU,
-and Synthesizer V music videos.
+            <p>
+                I've worked on subtitles for various Vocaloid, UTAU,
+                and Synthesizer V music videos.
+            </p>
 
-[View my subtitle archive →](https://www.youtube.com/playlist?list=PLf3_u5ost2n4)
+            <p>
+                <a href="https://www.youtube.com/playlist?list=PLf3_u5ost2n4"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    View my subtitle archive →
+                </a>
+            </p>
 
-### Some projects
+            <h3>Some Projects</h3>
 
--  Chenomio - フィクションです。feat.重音テト
--  Atena - Character T / Kasane Teto, Kasane Teto SV
--  ABM - 'ヤラララ' (YARARARA) feat. 重音テト
--  Shü - Baka Backer
--  d0tc0mmie - Don't Let Me Down feat. GUMI
--  Teirrel - Do That Again ft. GUMI
--  Yowane - Letterplane feat. 重音テト
--  Adeliae - Anger Management / Miyamai Moca
--  もくろ - ミューテーション / 初音ミク
+            <div class="projects">
 
-01  ████████████████████  Complete
-10  ████████████████████  Complete
-20  ████████████████████  Complete
-...
-100 ░░░░░░░░░░░░░░░░░░░░  In the future
+                <div class="project">
+                    Chenomio - フィクションです。feat.重音テト
+                </div>
+
+                <div class="project">
+                    Atena - Character T / Kasane Teto, Kasane Teto SV
+                </div>
+
+                <div class="project">
+                    ABM - ヤラララ (YARARARA) feat. 重音テト
+                </div>
+
+                <div class="project">
+                    Shü - Baka Backer
+                </div>
+
+                <div class="project">
+                    d0tc0mmie - Don't Let Me Down feat. GUMI
+                </div>
+
+                <div class="project">
+                    Teirrel - Do That Again ft. GUMI
+                </div>
+
+                <div class="project">
+                    Yowane - Letterplane feat. 重音テト
+                </div>
+
+                <div class="project">
+                    Adeliae - Anger Management / Miyamai Moca
+                </div>
+
+                <div class="project">
+                    もくろ - ミューテーション / 初音ミク
+                </div>
+
+            </div>
+        </section>
 
 
-## Completely Important Information
+        <section>
+            <h2>100 MV Goal 📊</h2>
 
-I love Aegisub.
+            <p>
+                A small record of the journey:
+            </p>
 
-I don't know why.
+            <ul>
+                <li>01 ████████████████████ Complete</li>
+                <li>10 ████████████████████ Complete</li>
+                <li>20 ████████████████████ Complete</li>
+                <li>...</li>
+                <li>100 ░░░░░░░░░░░░░░░░░░░░ In the future</li>
+            </ul>
+        </section>
 
-It has consumed my life.
 
-😭🙏
+        <section>
+            <div class="important">
 
-> "Just one more MV."
+                <h2>Completely Important Information 👽</h2>
 
-— Me, approximately 700 subtitle lines later
+                <p>I love Aegisub.</p>
+                <p>I don't know why.</p>
+                <p>It has consumed my life.</p>
+
+                <div class="quote">
+                    😭🙏<br><br>
+                    "Just one more MV."<br>
+                    — Me, approximately 700 subtitle lines later
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <div class="container">
+            Made with subtitles, Aegisub, and questionable amounts of time. 👽
+        </div>
+    </footer>
+
+</body>
+</html>
+```
