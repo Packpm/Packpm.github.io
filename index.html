@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>About Packpm</title>
+    <title>About Packpm 👽</title>
 
     <style>
         * {
@@ -17,145 +17,428 @@
 
         body {
             margin: 0;
-            background: #0f172a;
-            color: #e2e8f0;
+            background:
+                radial-gradient(circle at top, #17174a 0%, #09091b 45%, #05050d 100%);
+            color: #e8e8f2;
             font-family: Arial, Helvetica, sans-serif;
             line-height: 1.7;
         }
 
         a {
-            color: #67e8f9;
+            color: inherit;
             text-decoration: none;
         }
 
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            width: min(900px, 92%);
+        .page {
+            width: min(960px, 92%);
             margin: 0 auto;
+            padding: 30px 0 50px;
         }
 
-        header {
-            padding: 70px 0 45px;
-            text-align: center;
-            border-bottom: 1px solid #334155;
+        /* =========================
+           MAIN PROFILE CARD
+        ========================= */
+
+        .profile-card {
+            background: rgba(7, 7, 20, 0.94);
+            border: 1px solid #292943;
+            border-radius: 30px;
+            padding: 16px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
         }
 
-        header h1 {
+        .profile-bar {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 14px;
+
+            background: #080817;
+            border: 1px solid #292943;
+            border-radius: 25px;
+        }
+
+        .avatar {
+            width: 52px;
+            height: 52px;
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: #030308;
+            border: 1px solid #3b3b58;
+
+            color: white;
+            font-size: 1.25rem;
+            font-style: italic;
+        }
+
+        .profile-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .profile-name {
             margin: 0;
-            font-size: 3rem;
-            color: #f8fafc;
+            color: white;
+            font-size: 1.05rem;
+            font-weight: 700;
         }
 
-        header p {
-            margin: 10px 0 0;
-            color: #94a3b8;
-            font-size: 1.1rem;
+        .profile-meta {
+            margin: 2px 0 0;
+            color: #85859c;
+            font-size: 0.82rem;
         }
 
-        main {
-            padding: 45px 0;
+        .profile-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .profile-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 9px 17px;
+            border-radius: 22px;
+
+            font-size: 0.88rem;
+            font-weight: 700;
+
+            transition: 0.2s ease;
+        }
+
+        .subscribe-button {
+            background: white;
+            color: #101018;
+        }
+
+        .subscribe-button:hover {
+            background: #e8e8ee;
+            transform: translateY(-1px);
+        }
+
+        .channel-button {
+            border: 1px solid #3b3b54;
+            color: white;
+            background: transparent;
+        }
+
+        .channel-button:hover {
+            background: #171727;
+            transform: translateY(-1px);
+        }
+
+        /* =========================
+           SOCIAL LINKS
+        ========================= */
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 9px;
+
+            margin: 18px 5px 5px;
+        }
+
+        .social-links a {
+            padding: 8px 15px;
+
+            background: #0d0d1d;
+            border: 1px solid #29293f;
+            border-radius: 20px;
+
+            color: #b8b8ca;
+            font-size: 0.85rem;
+
+            transition: 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: white;
+            background: #17172a;
+            border-color: #55556e;
+            transform: translateY(-1px);
+        }
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .content {
+            padding: 45px 30px 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 15px 0 45px;
+        }
+
+        .hero h1 {
+            margin: 0;
+            color: white;
+            font-size: clamp(2.2rem, 7vw, 4rem);
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            margin: 10px auto 0;
+            max-width: 650px;
+            color: #9191a7;
+            font-size: 1rem;
+        }
+
+        .accent {
+            color: #67e8f9;
         }
 
         section {
-            margin-bottom: 45px;
+            margin-bottom: 42px;
         }
 
-        h2 {
-            margin-bottom: 18px;
-            color: #f8fafc;
-            font-size: 1.7rem;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 8px;
+        .section-title {
+            margin: 0 0 18px;
+            color: white;
+            font-size: 1.45rem;
         }
 
-        h3 {
-            color: #cbd5e1;
-            margin-bottom: 8px;
+        .section-title span {
+            color: #67e8f9;
         }
 
         p {
-            color: #cbd5e1;
-        }
-
-        ul {
-            padding-left: 25px;
-            color: #cbd5e1;
-        }
-
-        li {
-            margin: 7px 0;
+            color: #c7c7d5;
         }
 
         .intro {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
-        .highlight {
+        /* =========================
+           INFO CARDS
+        ========================= */
+
+        .info-card {
+            padding: 22px;
+            background: #0d0d1d;
+            border: 1px solid #29293f;
+            border-radius: 18px;
+        }
+
+        .info-card p:first-child {
+            margin-top: 0;
+        }
+
+        .info-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            padding: 6px 12px;
+            border-radius: 16px;
+            background: #151527;
+            border: 1px solid #303049;
+            color: #bfc0d1;
+            font-size: 0.82rem;
+        }
+
+        /* =========================
+           GOAL
+        ========================= */
+
+        .goal-card {
+            padding: 24px;
+            background:
+                linear-gradient(135deg, #11112b, #0b0b19);
+            border: 1px solid #30304a;
+            border-radius: 20px;
+        }
+
+        .goal-number {
+            margin: 0;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        .goal-number span {
             color: #67e8f9;
-            font-weight: bold;
+        }
+
+        .progress {
+            width: 100%;
+            height: 9px;
+            margin: 15px 0;
+
+            background: #24243a;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 20%;
+            height: 100%;
+
+            background: linear-gradient(
+                90deg,
+                #38bdf8,
+                #67e8f9
+            );
+
+            border-radius: 20px;
+        }
+
+        .goal-text {
+            margin-bottom: 0;
+            color: #9d9daf;
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           WHAT I DO
+        ========================= */
+
+        .things {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .thing {
+            padding: 14px 16px;
+
+            background: #0d0d1d;
+            border: 1px solid #29293f;
+            border-radius: 15px;
+
+            color: #c9c9d7;
+            font-size: 0.92rem;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .archive-link {
+            display: inline-flex;
+            margin: 4px 0 25px;
+
+            padding: 9px 16px;
+            border-radius: 20px;
+
+            background: #101025;
+            border: 1px solid #30304a;
+
+            color: #67e8f9;
+            font-size: 0.9rem;
+            font-weight: 700;
+
+            transition: 0.2s ease;
+        }
+
+        .archive-link:hover {
+            background: #18182c;
+            transform: translateY(-1px);
         }
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
         }
 
         .project {
-            padding: 18px;
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 10px;
+            overflow: hidden;
+
+            background: #0c0c1b;
+            border: 1px solid #29293f;
+            border-radius: 18px;
+
+            transition: 0.2s ease;
         }
 
         .project:hover {
-            border-color: #67e8f9;
+            transform: translateY(-3px);
+            border-color: #4c4c6a;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
         }
 
-
-/* MV thumbnails */
-
-.project img {
-    width: 100%;
-    display: block;
-    margin: 14px 0;
-    border-radius: 7px;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-}
-
-.project a {
-    display: block;
-    font-size: 1.15rem;
-    color: #67e8f9;
-}
-
-.project a:hover {
-    text-decoration: underline;
-}
-
-.project p {
-    margin: 6px 0 0;
-    color: #94a3b8;
-    font-size: 0.9rem;
-}
-
-        .goal {
-            padding: 20px;
-            background: #172033;
-            border-left: 4px solid #67e8f9;
-            border-radius: 6px;
+        .project-image-link {
+            display: block;
         }
+
+        .project img {
+            width: 100%;
+            height: auto;
+            display: block;
+
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+
+            transition: 0.25s ease;
+        }
+
+        .project:hover img {
+            transform: scale(1.025);
+        }
+
+        .project-info {
+            padding: 15px 16px 17px;
+        }
+
+        .project-title {
+            display: block;
+
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.45;
+        }
+
+        .project-title:hover {
+            color: #67e8f9;
+            text-decoration: none;
+        }
+
+        .producer {
+            margin: 6px 0 0;
+            color: #85859c;
+            font-size: 0.82rem;
+        }
+
+        /* =========================
+           IMPORTANT INFORMATION
+        ========================= */
 
         .important {
             padding: 25px;
-            background: #1e293b;
-            border: 1px dashed #475569;
-            border-radius: 10px;
+
+            background: #0d0d1d;
+            border: 1px dashed #44445e;
+            border-radius: 20px;
+
             text-align: center;
+        }
+
+        .important h2 {
+            margin-top: 0;
+            border: 0;
+            padding: 0;
         }
 
         .important p {
@@ -164,27 +447,81 @@
 
         .quote {
             margin-top: 18px;
-            padding: 15px 20px;
-            border-left: 3px solid #64748b;
-            color: #94a3b8;
+            padding: 15px;
+
+            background: #080817;
+            border-radius: 14px;
+
+            color: #85859c;
             font-style: italic;
         }
 
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
-            padding: 30px 0;
-            border-top: 1px solid #334155;
+            padding: 25px 0 5px;
             text-align: center;
-            color: #64748b;
-            font-size: 0.9rem;
+
+            color: #62627a;
+            font-size: 0.82rem;
         }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2.2rem;
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .page {
+                width: 94%;
+                padding-top: 15px;
             }
 
-            main {
-                padding: 30px 0;
+            .profile-bar {
+                align-items: flex-start;
+                flex-wrap: wrap;
+                border-radius: 22px;
+            }
+
+            .profile-info {
+                padding-top: 4px;
+            }
+
+            .profile-actions {
+                width: 100%;
+                margin-left: 66px;
+                justify-content: flex-start;
+            }
+
+            .content {
+                padding: 35px 12px 10px;
+            }
+
+            .things,
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-bottom: 35px;
+            }
+        }
+
+        @media (max-width: 430px) {
+
+            .profile-actions {
+                margin-left: 0;
+            }
+
+            .profile-button {
+                flex: 1;
+            }
+
+            .social-links a {
+                font-size: 0.8rem;
+                padding: 7px 12px;
             }
         }
     </style>
@@ -192,276 +529,688 @@
 
 <body>
 
-    <header>
-        <div class="container">
-            <h1>About Me 👽</h1>
-            <p>Subtitle Creator • Vocaloid / UTAU / Synthesizer V</p>
-        </div>
-    </header>
+<div class="page">
 
-    <main class="container">
+    <!-- =========================
+         PROFILE CARD
+    ========================= -->
 
-        <section>
-            <h2>Hi! I'm Packpm 👋</h2>
+    <div class="profile-card">
 
-            <p class="intro">
-                I'm a subtitle creator from Thailand who mainly works with
-                <span class="highlight">Vocaloid, UTAU, and Synthesizer V</span>
-                music.
-            </p>
+        <div class="profile-bar">
 
-            <p>
-                🎬 I create Thai subtitles and occasionally English subtitles
-                for music videos I enjoy.
-            </p>
+            <div class="avatar">
+                P
+            </div>
 
-            <p>
-                🎵 Favorite synth: <strong>Kasane Teto</strong>
-            </p>
-
-            <p>
-                💻 Tools I use:
-            </p>
-
-            <ul>
-                <li>Aegisub</li>
-                <li>YTSubConverter</li>
-                <li>GitHub</li>
-            </ul>
-        </section>
-
-
-        <section>
-            <h2>My Goal 🌱</h2>
-
-            <div class="goal">
-                <p>
-                    I'm working toward a personal goal of making subtitles
-                    for <strong>100 MVs</strong>.
-                </p>
-
-                <p>
-                    I started making subtitles simply because I wanted more
-                    Vocaloid songs to be accessible to Thai-speaking listeners.
-                    Over time, it became something I genuinely love doing.
-                </p>
-
-                <p>
-                    I also sometimes work directly with producers to provide
-                    official subtitles for their MVs.
+            <div class="profile-info">
+                <p class="profile-name">Packpm</p>
+                <p class="profile-meta">
+                    Subtitle Creator • Thailand
                 </p>
             </div>
-        </section>
 
+            <div class="profile-actions">
 
-        <section>
-            <h2>What I Do 🎬</h2>
-
-            <ul>
-                <li>🇹🇭 Japanese / English → Thai lyric translation</li>
-                <li>🇬🇧 Japanese / Thai → English translation</li>
-                <li>🎬 Aegisub subtitle timing</li>
-                <li>✨ Subtitle styling and effects</li>
-                <li>📺 YouTube subtitle preparation</li>
-                <li>🤝 Subtitle contributions for Vocaloid producers</li>
-            </ul>
-        </section>
-
-
-        <section>
-            <h2>My Works 📚</h2>
-
-            <p>
-                I've worked on subtitles for various Vocaloid, UTAU,
-                and Synthesizer V music videos.
-            </p>
-
-            <p>
-                <a href="https://www.youtube.com/playlist?list=PLf3_u5ost2n4"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    View my subtitle archive →
+                <!--https://www.youtube.com/@Pack0Pm-->
+                <a
+                    class="profile-button subscribe-button"
+                    href="YOUR_YOUTUBE_CHANNEL_URL"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Subscribe
                 </a>
-            </p>
 
-            <h3>Some Projects</h3>
-
-            <div class="projects">
-
-    <div class="project">
-        <a href="https://www.youtube.com/watch?v=LxVv4QneUuU"
-           target="_blank"
-           rel="noopener noreferrer">
-            <strong>It's fiction. feat.Kasane Teto</strong>
-        </a>
-
-        <img src="https://img.youtube.com/vi/LxVv4QneUuU/hqdefault.jpg"
-             alt="フィクションです。feat.重音テト thumbnail">
-
-        <p>Chenomio</p>
-    </div>
-
-
-    <div class="project">
-        <a href="https://www.youtube.com/watch?v=YSBZFVSvqL0"
-           target="_blank"
-           rel="noopener noreferrer">
-            <strong>Character T / Kasane Teto, Kasane Teto SV</strong>
-        </a>
-
-        <img src="https://img.youtube.com/vi/YSBZFVSvqL0/hqdefault.jpg"
-             alt="Character T thumbnail">
-
-        <p>Atena</p>
-    </div>
-
-
-    <div class="project">
-        <a href="https://www.youtube.com/watch?v=T24rF_x0TmQ"
-           target="_blank"
-           rel="noopener noreferrer">
-            <strong>ヤラララ (YARARARA) feat. 重音テト</strong>
-        </a>
-
-        <img src="https://img.youtube.com/vi/T24rF_x0TmQ/hqdefault.jpg"
-             alt="ヤラララ thumbnail">
-
-        <p>ABM</p>
-    </div>
-
-
-    <div class="project">
-        <a href="https://www.youtube.com/watch?v=eQsg69cWaac"
-           target="_blank"
-           rel="noopener noreferrer">
-            <strong>Baka Backer / feat. Kasane Teto (UTAU & SV)</strong>
-        </a>
-
-        <img src="https://img.youtube.com/vi/eQsg69cWaac/hqdefault.jpg"
-             alt="Baka Backer thumbnail">
-
-        <p>Shü</p>
-    </div>
-
-
-    <div class="project">
-        <a href="https://www.youtube.com/watch?v=QzXs2d02_8A"
-           target="_blank"
-           rel="noopener noreferrer">
-            <strong>Don't Let Me Down feat. GUMI</strong>
-        </a>
-
-        <img src="https://img.youtube.com/vi/QzXs2d02_8A/hqdefault.jpg"
-             alt="Don't Let Me Down thumbnail">
-
-        <p>d0tc0mmie</p>
-    </div>
-
-
-    <div class="project">
-        <a href="https://www.youtube.com/watch?v=jK-tt-3XJ7c"
-           target="_blank"
-           rel="noopener noreferrer">
-            <strong>Do That Again ft. GUMI</strong>
-        </a>
-
-        <img src="https://img.youtube.com/vi/jK-tt-3XJ7c/hqdefault.jpg"
-             alt="Do That Again thumbnail">
-
-        <p>Teirrel</p>
-    </div>
-
-
-    <div class="project">
-        <a href="https://www.youtube.com/watch?v=m8jn4eSfVBM"
-           target="_blank"
-           rel="noopener noreferrer">
-            <strong>Letterplane feat. 重音テト</strong>
-        </a>
-
-        <img src="https://img.youtube.com/vi/m8jn4eSfVBM/hqdefault.jpg"
-             alt="Letterplane thumbnail">
-
-        <p>Yowane</p>
-    </div>
-
-
-    <div class="project">
-        <a href="https://www.youtube.com/watch?v=L9Yob_ylEAQ"
-           target="_blank"
-           rel="noopener noreferrer">
-            <strong>Anger Management / Miyamai Moca</strong>
-        </a>
-
-        <img src="https://img.youtube.com/vi/L9Yob_ylEAQ/hqdefault.jpg"
-             alt="Anger Management thumbnail">
-
-        <p>Adeliae</p>
-    </div>
-
-
-    <div class="project">
-        <a href="https://www.youtube.com/watch?v=cWWrWLTQyE8"
-           target="_blank"
-           rel="noopener noreferrer">
-            <strong>ミューテーション</strong>
-        </a>
-
-        <img src="https://img.youtube.com/vi/cWWrWLTQyE8/hqdefault.jpg"
-             alt="ミューテーション thumbnail">
-
-        <p>Mokurock</p>
-    </div>
-
-</div>
+                <!--https://www.youtube.com/@Pack0Pm-->
+                <a
+                    class="profile-button channel-button"
+                    href="YOUR_YOUTUBE_CHANNEL_URL"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View channel ↗
+                </a>
 
             </div>
-        </section>
+
+        </div>
 
 
-        <section>
-            <h2>100 MV Goal 📊</h2>
+        <!-- SOCIAL LINKS -->
 
-            <p>
-                A small record of the journey:
-            </p>
+        <div class="social-links">
 
-            <ul>
-                <li>01 ████████████████████ Complete</li>
-                <li>10 ████████████████████ Complete</li>
-                <li>20 ████████████████████ Complete</li>
-                <li>...</li>
-                <li>100 ░░░░░░░░░░░░░░░░░░░░ In the future</li>
-            </ul>
-        </section>
+            <!-- CHANGE THESE LINKS -->
+
+            <a
+                href="https://www.youtube.com/@Pack0Pm"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                YouTube
+            </a>
+
+            <a
+                href="https://discord.com/users/759341756025798656"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Discord
+            </a>
+
+            <a
+                href="https://x.com/Pack0pm"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                X
+            </a>
+
+            <a
+                href="https://www.tiktok.com/@pack0pm"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                TikTok
+            </a>
+
+            <!--doubletp90@gmail.com-->
+            <a href="mailto:YOUR_EMAIL_ADDRESS">
+                Email
+            </a>
+
+        </div>
 
 
-        <section>
-            <div class="important">
+        <div class="content">
 
-                <h2>Completely Important Information 👽</h2>
+            <!-- =========================
+                 HERO
+            ========================= -->
 
-                <p>I love Aegisub.</p>
-                <p>I don't know why.</p>
-                <p>It has consumed my life.</p>
+            <div class="hero">
 
-                <div class="quote">
-                    😭🙏<br><br>
-                    "Just one more MV."<br>
-                    — Me, approximately 700 subtitle lines later
+                <h1>
+                    About Me <span class="accent">👽</span>
+                </h1>
+
+                <p>
+                    Subtitle Creator • Vocaloid / UTAU / Synthesizer V
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 ABOUT ME
+            ========================= -->
+
+            <section>
+
+                <h2 class="section-title">
+                    Hi! I'm Packpm <span>👋</span>
+                </h2>
+
+                <div class="info-card">
+
+                    <p class="intro">
+                        I'm a subtitle creator from Thailand who mainly works
+                        with
+                        <span class="accent">
+                            Vocaloid, UTAU, and Synthesizer V
+                        </span>
+                        music.
+                    </p>
+
+                    <p>
+                        🎬 I create Thai subtitles and occasionally English
+                        subtitles for music videos I enjoy.
+                    </p>
+
+                    <p>
+                        🎵 Favorite synth:
+                        <strong>Kasane Teto</strong>
+                    </p>
+
+                    <p>
+                        💻 Tools I use:
+                    </p>
+
+                    <div class="tools">
+                        <span class="tag">Aegisub</span>
+                        <span class="tag">YTSubConverter</span>
+                        <span class="tag">GitHub</span>
+                    </div>
+
                 </div>
 
-            </div>
-        </section>
+            </section>
 
-    </main>
+
+            <!-- =========================
+                 GOAL
+            ========================= -->
+
+            <section>
+
+                <h2 class="section-title">
+                    My Goal <span>🌱</span>
+                </h2>
+
+                <div class="goal-card">
+
+                    <p class="goal-number">
+                        20+ <span>/ 100 MVs</span>
+                    </p>
+
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+
+                    <p class="goal-text">
+                        A small record of my journey toward subtitling
+                        100 music videos.
+                    </p>
+
+                    <p>
+                        I started making subtitles simply because I wanted
+                        more Vocaloid songs to be accessible to
+                        Thai-speaking listeners.
+                        Over time, it became something I genuinely love doing.
+                    </p>
+
+                    <p>
+                        I also sometimes work directly with producers
+                        to provide official subtitles for their MVs.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 WHAT I DO
+            ========================= -->
+
+            <section>
+
+                <h2 class="section-title">
+                    What I Do <span>🎬</span>
+                </h2>
+
+                <div class="things">
+
+                    <div class="thing">
+                        🇹🇭 Japanese / English → Thai lyric translation
+                    </div>
+
+                    <div class="thing">
+                        🇬🇧 Japanese / Thai → English translation
+                    </div>
+
+                    <div class="thing">
+                        🎬 Aegisub subtitle timing
+                    </div>
+
+                    <div class="thing">
+                        ✨ Subtitle styling and effects
+                    </div>
+
+                    <div class="thing">
+                        📺 YouTube subtitle preparation
+                    </div>
+
+                    <div class="thing">
+                        🤝 Subtitle contributions for Vocaloid producers
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 MY WORKS
+            ========================= -->
+
+            <section>
+
+                <h2 class="section-title">
+                    My Works <span>📚</span>
+                </h2>
+
+                <p>
+                    I've worked on subtitles for various Vocaloid, UTAU,
+                    and Synthesizer V music videos.
+                </p>
+
+                <a
+                    class="archive-link"
+                    href="https://www.youtube.com/playlist?list=PLf3_u5ost2n4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View my subtitle archive →
+                </a>
+
+
+                <div class="projects">
+
+
+                    <!-- 01 -->
+
+                    <div class="project">
+
+                        <a
+                            class="project-image-link"
+                            href="https://www.youtube.com/watch?v=LxVv4QneUuU"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="https://img.youtube.com/vi/LxVv4QneUuU/hqdefault.jpg"
+                                alt="It's fiction. feat. Kasane Teto thumbnail"
+                            >
+                        </a>
+
+                        <div class="project-info">
+
+                            <a
+                                class="project-title"
+                                href="https://www.youtube.com/watch?v=LxVv4QneUuU"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                It's fiction. feat. Kasane Teto
+                            </a>
+
+                            <p class="producer">
+                                Chenomio
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 02 -->
+
+                    <div class="project">
+
+                        <a
+                            class="project-image-link"
+                            href="https://www.youtube.com/watch?v=YSBZFVSvqL0"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="https://img.youtube.com/vi/YSBZFVSvqL0/hqdefault.jpg"
+                                alt="Character T thumbnail"
+                            >
+                        </a>
+
+                        <div class="project-info">
+
+                            <a
+                                class="project-title"
+                                href="https://www.youtube.com/watch?v=YSBZFVSvqL0"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Character T / Kasane Teto, Kasane Teto SV
+                            </a>
+
+                            <p class="producer">
+                                Atena
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 03 -->
+
+                    <div class="project">
+
+                        <a
+                            class="project-image-link"
+                            href="https://www.youtube.com/watch?v=T24rF_x0TmQ"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="https://img.youtube.com/vi/T24rF_x0TmQ/hqdefault.jpg"
+                                alt="YARARARA thumbnail"
+                            >
+                        </a>
+
+                        <div class="project-info">
+
+                            <a
+                                class="project-title"
+                                href="https://www.youtube.com/watch?v=T24rF_x0TmQ"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                ヤラララ (YARARARA) feat. 重音テト
+                            </a>
+
+                            <p class="producer">
+                                ABM
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 04 -->
+
+                    <div class="project">
+
+                        <a
+                            class="project-image-link"
+                            href="https://www.youtube.com/watch?v=eQsg69cWaac"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="https://img.youtube.com/vi/eQsg69cWaac/hqdefault.jpg"
+                                alt="Baka Backer thumbnail"
+                            >
+                        </a>
+
+                        <div class="project-info">
+
+                            <a
+                                class="project-title"
+                                href="https://www.youtube.com/watch?v=eQsg69cWaac"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Baka Backer / feat. Kasane Teto
+                            </a>
+
+                            <p class="producer">
+                                Shü
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 05 -->
+
+                    <div class="project">
+
+                        <a
+                            class="project-image-link"
+                            href="https://www.youtube.com/watch?v=QzXs2d02_8A"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="https://img.youtube.com/vi/QzXs2d02_8A/hqdefault.jpg"
+                                alt="Don't Let Me Down thumbnail"
+                            >
+                        </a>
+
+                        <div class="project-info">
+
+                            <a
+                                class="project-title"
+                                href="https://www.youtube.com/watch?v=QzXs2d02_8A"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Don't Let Me Down feat. GUMI
+                            </a>
+
+                            <p class="producer">
+                                d0tc0mmie
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 06 -->
+
+                    <div class="project">
+
+                        <a
+                            class="project-image-link"
+                            href="https://www.youtube.com/watch?v=jK-tt-3XJ7c"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="https://img.youtube.com/vi/jK-tt-3XJ7c/hqdefault.jpg"
+                                alt="Do That Again thumbnail"
+                            >
+                        </a>
+
+                        <div class="project-info">
+
+                            <a
+                                class="project-title"
+                                href="https://www.youtube.com/watch?v=jK-tt-3XJ7c"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Do That Again ft. GUMI
+                            </a>
+
+                            <p class="producer">
+                                Teirrel
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 07 -->
+
+                    <div class="project">
+
+                        <a
+                            class="project-image-link"
+                            href="https://www.youtube.com/watch?v=m8jn4eSfVBM"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="https://img.youtube.com/vi/m8jn4eSfVBM/hqdefault.jpg"
+                                alt="Letterplane thumbnail"
+                            >
+                        </a>
+
+                        <div class="project-info">
+
+                            <a
+                                class="project-title"
+                                href="https://www.youtube.com/watch?v=m8jn4eSfVBM"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Letterplane feat. 重音テト
+                            </a>
+
+                            <p class="producer">
+                                Yowane
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 08 -->
+
+                    <div class="project">
+
+                        <a
+                            class="project-image-link"
+                            href="https://www.youtube.com/watch?v=L9Yob_ylEAQ"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="https://img.youtube.com/vi/L9Yob_ylEAQ/hqdefault.jpg"
+                                alt="Anger Management thumbnail"
+                            >
+                        </a>
+
+                        <div class="project-info">
+
+                            <a
+                                class="project-title"
+                                href="https://www.youtube.com/watch?v=L9Yob_ylEAQ"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Anger Management / Miyamai Moca
+                            </a>
+
+                            <p class="producer">
+                                Adeliae
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 09 -->
+
+                    <div class="project">
+
+                        <a
+                            class="project-image-link"
+                            href="https://www.youtube.com/watch?v=cWWrWLTQyE8"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="https://img.youtube.com/vi/cWWrWLTQyE8/hqdefault.jpg"
+                                alt="ミューテーション thumbnail"
+                            >
+                        </a>
+
+                        <div class="project-info">
+
+                            <a
+                                class="project-title"
+                                href="https://www.youtube.com/watch?v=cWWrWLTQyE8"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                ミューテーション
+                            </a>
+
+                            <p class="producer">
+                                Mokurock
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 100 MV GOAL
+            ========================= -->
+
+            <section>
+
+                <h2 class="section-title">
+                    100 MV Goal <span>📊</span>
+                </h2>
+
+                <div class="goal-card">
+
+                    <p class="goal-number">
+                        20+ <span>/ 100 MVs</span>
+                    </p>
+
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+
+                    <p class="goal-text">
+                        Still a long way to go. But hey, one MV at a time. 👽
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 IMPORTANT INFORMATION
+            ========================= -->
+
+            <section>
+
+                <div class="important">
+
+                    <h2 class="section-title">
+                        Completely Important Information <span>👽</span>
+                    </h2>
+
+                    <p>
+                        I love Aegisub.
+                    </p>
+
+                    <p>
+                        I don't know why.
+                    </p>
+
+                    <p>
+                        It has consumed my life.
+                    </p>
+
+                    <div class="quote">
+
+                        😭🙏
+
+                        <br><br>
+
+                        "Just one more MV."
+
+                        <br>
+
+                        — Me, approximately 700 subtitle lines later
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
 
 
     <footer>
-        <div class="container">
-            Made with subtitles, Aegisub, and questionable amounts of time. 👽
-        </div>
+
+        Made with subtitles, Aegisub, and questionable amounts of time. 👽
+
     </footer>
+
+</div>
 
 </body>
 </html>
